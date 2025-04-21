@@ -1,7 +1,6 @@
 import { Card, Form, Row, Col, Container } from "react-bootstrap";
 import BlogServices from "../../services/blogs.services";
 import { useEffect, useState } from "react";
-import { IMAGEENDPOINT } from "../../config";
 interface IBlog {
     title: string,
     author: string,
@@ -33,7 +32,7 @@ const Blogs = () => {
                 {blogs.map((blog, index) => (
                     <Col md={4} key={index} className="mb-4">
                         <Card className="h-100" style={{ border: "none", borderRadius: "0" }}>
-                            <Card.Img variant="top" src={IMAGEENDPOINT+blog.blog_image_url} style={{ height: '200px', objectFit: 'cover', borderRadius: "0" }} />
+                            <Card.Img variant="top" src={blog.blog_image_url} style={{ height: '200px', objectFit: 'cover', borderRadius: "0" }} />
                             <Card.Body style={{ padding: 0, marginTop: "32px" }}>
                                 <Card.Subtitle className="mb-2 text-muted">
                                     {blog.author} • {blog.created_at}
