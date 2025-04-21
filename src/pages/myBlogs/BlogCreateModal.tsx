@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import BlogServices from "../../services/blogs.services";
-import { IMAGEENDPOINT } from "../../config";
 
 interface Category {
   _id: string;
@@ -83,7 +82,7 @@ const BlogCreateModal: React.FC<BlogCreateModalProps> = ({ onClose, onSubmit }) 
           <label>Image</label>
           <input type="file" accept="image/*" onChange={handleImageUpload} />
           {loading && <p>Uploading...</p>}
-          {formData.blog_image_url && <img src={IMAGEENDPOINT+formData.blog_image_url} alt="Preview" className="preview-image" />}
+          {formData.blog_image_url && <img src={formData.blog_image_url} alt="Preview" className="preview-image" />}
           <label>Category</label>
           <select name="category_id" value={formData.category_id} onChange={handleChange} required>
             <option value="">Select Category</option>
