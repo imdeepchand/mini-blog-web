@@ -112,7 +112,7 @@ export default function SigninPage(): React.JSX.Element {
         {submitted && <p className="success-text">Successfully Signed In!</p>}
 
         <p className="signup-text">
-          Don't you have an account? <span className="signup-highlight">Sign Up</span>
+          Don't you have an account? <span className="signup-highlight"><a href="/signup">Sign Up</a></span>
         </p>
       </div>
 
